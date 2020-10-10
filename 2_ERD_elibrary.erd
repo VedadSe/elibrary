@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="2_ERD_elibrary">
+	<entities>
+		<data-source id="postgres-jdbc-1750e99d84a-6732a2ecd3a6ba2e">
+			<entity id="1" name="books" fq-name="public.books">
+				<path name="public"/>
+				<path name="elibrary"/>
+			</entity>
+			<entity id="2" name="borrowed_books" fq-name="public.borrowed_books">
+				<path name="public"/>
+				<path name="elibrary"/>
+			</entity>
+			<entity id="3" name="members" fq-name="public.members">
+				<path name="public"/>
+				<path name="elibrary"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="borrowed_books_isbn_fkey" fq-name="public.borrowed_books.borrowed_books_isbn_fkey" type="fk" pk-ref="1" fk-ref="2"/>
+		<relation name="borrowed_books_personal_number_fkey" fq-name="public.borrowed_books.borrowed_books_personal_number_fkey" type="fk" pk-ref="3" fk-ref="2"/>
+	</relations>
+</diagram>
